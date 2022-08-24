@@ -20,7 +20,6 @@ for row in range(len(doc.tables[1].rows)):
     for cell in range(len(doc.tables[1].rows[row].cells)):
         tables_text.append(doc.tables[1].rows[row].cells[cell].text)
 
-print(tables_text)
 
 tables_word = []
 for row in range(len(doc.tables[1].rows)):
@@ -29,15 +28,11 @@ for row in range(len(doc.tables[1].rows)):
             if doc.tables[1].rows[row].cells[cell].text.split()[word] not in tables_word:
                 tables_word.append(doc.tables[1].rows[row].cells[cell].text.split()[word])
 
-print(tables_word)
-
 tables_letter = ''
 for word in tables_word:
     tables_letter += word
 
 letter_list = list(tables_letter)
-
-print(letter_list)
 
 
 def searching(letters):

@@ -51,23 +51,17 @@ print(letter_list)
 
 
 def searching(letters):
-    for letter in letters:
-        if letter in letter_list:
-            print(letter)
-            ind1 = letter_list.index(letter)
-            print(ind1)
-            print(letter_list[ind1])
-            if letter_list[ind1+1] == letter_list[letter_list.index(letter)+1]:
-                if letter_list[ind1 + 2] == letter_list[letter_list.index(letter) + 2]:
-                    print(letter_list[ind1] + letter_list[ind1+1]+letter_list[ind1+2])
+
+    def search(i):
+        if i < len(list(letters)):
+            if letters[i] in letter_list:
+                search(i+1)
+            else:
+                print('нет такого сочетания букв')
         else:
-            print('нет такого сочетания букв')
+            print('В тексте найдено слово (' + letters + ')')
+
+    search(0)
 
 
-searching(list('Пунга'))
-
-
-if 'Пунга' in tables_word:
-    print('Найдено совпадение')
-else:
-    print('совпадений не найдено')
+searching('Пунга')

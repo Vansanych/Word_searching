@@ -21,23 +21,28 @@ for row in range(len(doc.tables[1].rows)):
         tables_text.append(doc.tables[1].rows[row].cells[cell].text)
 
 
-tables_word = []
+tables_word = []  # создание списка из слов в ячейках
 for row in range(len(doc.tables[1].rows)):
     for cell in range(len(doc.tables[1].rows[row].cells)):
         for word in range(len(doc.tables[1].rows[row].cells[cell].text.split())):
             if doc.tables[1].rows[row].cells[cell].text.split()[word] not in tables_word:
                 tables_word.append(doc.tables[1].rows[row].cells[cell].text.split()[word])
 
-tables_letter = ''
+print(tables_text)
+print(tables_word)
+
+
+tables_letter = ''  # создает строку из слов
 for word in tables_word:
     tables_letter += word
 
-letter_list = list(tables_letter)
+
+letter_list = list(tables_letter)  # разбивает строку из слов по буквам
 
 
 def searching(letters):
 
-    def search(i):
+    def search(i):  # выполняет поиск буквы и переходит к следующей
         if i < len(list(letters)):
             if letters[i] in letter_list:
                 search(i+1)

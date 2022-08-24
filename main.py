@@ -40,17 +40,31 @@ letter_list = list(tables_letter)
 print(letter_list)
 
 
+# def searching(letters):
+#     for letter in letters:
+#         if letter in letter_list:
+#             print(letter)
+#             print(letter_list.index(letter))
+#             print(letter_list[letter_list.index(letter)])
+#         else:
+#             print('нет такого сочетания букв')
+
+
 def searching(letters):
     for letter in letters:
         if letter in letter_list:
             print(letter)
-            print(letter_list.index(letter))
-            print(letter_list[letter_list.index(letter)])
+            ind1 = letter_list.index(letter)
+            print(ind1)
+            print(letter_list[ind1])
+            if letter_list[ind1+1] == letter_list[letter_list.index(letter)+1]:
+                if letter_list[ind1 + 2] == letter_list[letter_list.index(letter) + 2]:
+                    print(letter_list[ind1] + letter_list[ind1+1]+letter_list[ind1+2])
         else:
             print('нет такого сочетания букв')
 
 
-searching(list('%унга'))
+searching(list('Пунга'))
 
 
 if 'Пунга' in tables_word:

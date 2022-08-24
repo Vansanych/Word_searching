@@ -40,16 +40,6 @@ letter_list = list(tables_letter)
 print(letter_list)
 
 
-# def searching(letters):
-#     for letter in letters:
-#         if letter in letter_list:
-#             print(letter)
-#             print(letter_list.index(letter))
-#             print(letter_list[letter_list.index(letter)])
-#         else:
-#             print('нет такого сочетания букв')
-
-
 def searching(letters):
 
     def search(i):

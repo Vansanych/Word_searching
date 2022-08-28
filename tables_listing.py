@@ -4,4 +4,10 @@ doc = docx.Document(r'C:\Users\Иван\Desktop\Иван\python\pythonProject\py
 
 tables = doc.tables
 
-print(len(tables))
+print("tables amount -", len(tables))
+
+for table in range(len(tables)):
+    print("\ntable #", table)
+    for i in range(len(tables[table].rows)):
+        print("row #", i)
+    print('end')

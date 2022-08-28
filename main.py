@@ -26,11 +26,11 @@ for row in range(len(rows1)):  # создает список из текста �
 
 
 tables_word = []  # создание списка из слов в ячейках
-for row in range(len(doc.tables[1].rows)):
-    for cell in range(len(doc.tables[1].rows[row].cells)):
-        for word in range(len(doc.tables[1].rows[row].cells[cell].text.split())):
-            if doc.tables[1].rows[row].cells[cell].text.split()[word] not in tables_word:
-                tables_word.append(doc.tables[1].rows[row].cells[cell].text.split()[word])
+for row in range(len(rows1)):
+    for cell in range(len(rows1[row].cells)):
+        for word in range(len(rows1[row].cells[cell].text.split())):
+            if rows1[row].cells[cell].text.split()[word] not in tables_word:
+                tables_word.append(rows1[row].cells[cell].text.split()[word])
 
 
 print(tables_text)
